@@ -1,0 +1,32 @@
+.head{
+    
+    height: 50px;
+    background-color: rgb(41, 115, 184);
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+   
+}
+.content{
+    
+    border: 2px solid rgb(71, 71, 243);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  
+}
+.inDiv{
+    height: 100px;
+    width: 47%;
+    border-radius: 5px;
+    background-color: rgb(255, 205, 196);
+    font-size: 30px; 
+    color: red; 
+}
+.inDiv2{
+    height: 100px;
+    width: 47%;
+     font-size: 30px; 
+    border-radius: 5px;
+    background-color: rgb(191, 236, 250); 
+    color: blue;
+}

@@ -1,0 +1,51 @@
+<div class="cont">
+  <mat-card>
+    <mat-card-title>List of Students</mat-card-title>
+    <mat-card-content>
+        <div class="addbutton">
+    <button mat-raised-button color="primary"(click)="Onadd()">add Students</button>
+       </div>
+       <div class="table-responsive text-nowrap">
+        <table class="table w-auto">
+            <thead>
+             <tr>
+             <th>Id</th>
+             <th>First Name</th>
+             <th>Middle Name</th>
+             <th>Last Name</th>
+             <th>Reg No</th>
+             <th>Dob</th>
+             <th>Place Of Birth</th>
+             <th>Gender</th>
+             <th>Phone Number</th>
+             <th>Course name</th>
+             <th>Faculty name</th>
+             <th>campus name</th>
+             <th>ACTION</th>
+             
+             </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let stud of viewstudent,let x=index">
+               <td>{{stud.std_id}}</td>
+               <td>{{stud.first_name}}</td>
+               <td>{{stud.middle_name}}</td>
+               <td>{{stud.last_name}}</td>
+               <td>{{stud.reg_no}}</td>
+               <td>{{stud.dob}}</td>
+               <td>{{stud.place_of_birth}}</td>
+               <td>{{stud.gender}}</td>
+               <td>{{stud.phone_number}}</td>
+               <td>{{stud.course_name}}</td>
+               <td>{{stud.faculty_name}}</td>
+               <td>{{stud.campus_name}}</td>
+               <td><button type="button" class="btn btn-danger" (click)="Ondelete(stud.std_id)">delete</button>&nbsp;<button type="button" class="btn btn-success" (click)="Edit"><i class="fa fa-edit"></i></button></td>
+             
+             </tr>
+            </tbody>
+        </table>
+      </div>
+    </mat-card-content>
+</mat-card>
+</div>
+

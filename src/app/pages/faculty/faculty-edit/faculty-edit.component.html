@@ -1,0 +1,18 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-header>edit faculty</mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="EditFormFaculty" autocomplete="off">
+                <div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>faculty name</mat-label>
+                            <input matInput formControlName="facultyName" placeholder="facultyname" value="facultyname">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+            <div> <button mat-raised-button color="primary" (click)="Onedit()">add</button></div>
+        </mat-card-content>
+    </mat-card>
+</div>

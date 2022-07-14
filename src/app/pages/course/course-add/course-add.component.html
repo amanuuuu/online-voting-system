@@ -1,0 +1,39 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-title>add course </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="AddFormCourse" autocomplete="off">
+                <div>
+                    <div class="col-md-6">
+                        <mat-form-field>
+                            <mat-label>course name</mat-label>
+                            <input matInput formControlName="courseName" placeholder="coursename">
+                        </mat-form-field>
+                    </div>
+                </div>
+               <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>faculty</mat-label>
+                    <mat-select formControlName="faculty_id">
+                        <mat-option *ngFor="let facult of viewfaculty"[value]="facult.facultyId">
+                            {{facult.facultyName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+               </div>
+               <div class="col-md-6">
+                <mat-form-field appearance="fill">
+                    <mat-label>campus</mat-label>
+                    <mat-select formControlName="campus_id">
+                        <mat-option *ngFor="let campus of viewCampus"[value]="campus.campusId">
+                            {{campus.campusName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+               </div>
+                   </form>
+            <div> <button mat-raised-button color="primary" (click)="Onadd()">add</button></div>
+        </mat-card-content>
+    </mat-card>
+</div>
+

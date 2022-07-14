@@ -1,0 +1,47 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="tool">Menu</mat-toolbar>
+    <mat-nav-list class="links">
+      <a mat-list-item routerLink="home">home</a>
+      <a mat-list-item routerLink="campus">campus</a>
+      <a mat-list-item routerLink="faculty">faculty</a>
+      <a mat-list-item routerLink="course">course</a>
+      <a mat-list-item routerLink="position">position</a>
+      <a mat-list-item routerLink="student">student</a>
+      <a mat-list-item routerLink="candidate">candidate</a>
+      <a mat-list-item routerLink="votingResult">votes</a>
+     
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class='mx-lt-5 bg-dark d-flex'>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="row">
+        <span class="text-white text-center">suzaonlinevoting</span>
+      </div>
+      <button class="btn btn-info" (click)="logout()"><i class="fa fa-user"></i></button>
+      
+    </mat-toolbar>
+    <div  class="router-outlet">
+      <div class="in">
+        <div class="inner">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+     
+    </div>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

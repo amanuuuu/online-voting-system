@@ -1,0 +1,31 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-title>List of campus</mat-card-title>
+        <mat-card-content>
+            <div class="addbutton">
+                <button mat-raised-button color="primary" (click)="Onadd()">add Campus</button>
+            </div>
+            <div class="table">
+                <table class=" table table-border">
+                    <thead>
+                        <tr>
+                            <th>campus Id</th>
+                            <th>campus Name</th>
+                            <th>Action</th>
+                            <td></td>
+                        </tr >
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let camp of viewcampus,let x=index">
+                            <td>{{camp.campusId}}</td>
+                            <td>{{camp.campusName}}</td> 
+                            <td><button mat-raised-button color="primary" (click)="Ondelete(camp.campusId)">delete</button></td>
+                            <td><button mat-raised-button color="primary" (click)="Edit(camp)">update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    
+</div>

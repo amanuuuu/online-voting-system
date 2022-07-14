@@ -1,0 +1,52 @@
+<div class="cont">
+  <mat-card>
+    <mat-card-title>List of candidate</mat-card-title>
+    <mat-card-content>
+        <div class="addbutton">
+    <button mat-raised-button color="primary"(click)="Onadd()">add candidate</button>
+       </div>
+       <div class="table-responsive text-nowrap">
+        <table class="table table-border">
+       <thead>
+        <tr>
+        <th>Id</th>
+        <th>candidate Picture</th>
+        <th>gpa</th>
+        <th>Registration number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Middle Name</th>
+        <th>Gender</th>
+        <th>course Name</th>
+        <th>Position Name</th>
+        <th>faculty Name</th>
+        <th>Campus Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr *ngFor="let cand of viewcandidate,let x=index">
+          <td>{{cand.candidate_id}}</td>
+          <td><img [src]="'data:image/jpeg;base64,'+cand.image" alt="" style="width: 65px;height: 65px;border-radius: 15px;"></td>
+          <td>{{cand.gpa}}</td>
+          <td>{{cand.reg_no}}</td>
+          <td>{{cand.first_name}}</td>
+          <td>{{cand.last_name}}</td>
+          <td>{{cand.middle_name}}</td>
+          <td>{{cand.gender}}</td>
+          <td>{{cand.course_name}}</td>
+          <td>{{cand.position_name}}</td>
+          <td>{{cand.faculty_name}}</td>
+          <td>{{cand.campus_name}}</td>
+          <td><button mat-raised-button color="primary"(click)="Ondelete(cand.candidate_id)">delete</button></td>
+          <td><button mat-raised-button color="primary"(click)="Edit">update</button></td>
+        </tr>
+       </tbody>
+        </table>
+
+       </div>
+    </mat-card-content>
+</mat-card>
+
+</div>

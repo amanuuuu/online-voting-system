@@ -1,0 +1,12 @@
+<form [formGroup]="AddFormPosition" autocomplete="off">
+    <div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <mat-label>position name</mat-label>
+                <input matInput formControlName="positionName" placeholder="positionname">
+            </mat-form-field>
+        </div>
+    </div>
+
+</form>
+<div> <button mat-raised-button color="primary" (click)="Onadd()">add</button></div>

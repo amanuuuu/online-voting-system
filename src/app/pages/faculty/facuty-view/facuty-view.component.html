@@ -1,0 +1,34 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-title> List of Faculty</mat-card-title>
+        <mat-card-content>
+            <div><button mat-raised-button color="primary" (click)="onadd()">add faculty</button></div>
+            <div>
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <th>Faculty Id</th>
+                            <th>facultyName</th>
+                            <th>delete</th>
+                            <th>update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let facult of viewfaculty">
+                            <td>{{facult.facultyId}}</td>
+                            <td>{{facult.facultyName}}</td>
+                            <td >
+                          <button mat-raised-button color="primary"(click)="Ondelete(facult.facultyId)">delete </button>
+                          </td>
+                          <td>
+                          <button mat-raised-button color="primary"(click)="Edit(facult)">update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-card-content>
+          
+    </mat-card>
+    
+</div>

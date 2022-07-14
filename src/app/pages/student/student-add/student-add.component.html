@@ -1,0 +1,98 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-title>Student registration page </mat-card-title>
+        <mat-card-content>
+            <form [formGroup]="AddFormStudent" autocomplete="off">
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>first name</mat-label>
+                            <input matInput formControlName="firstName" placeholder="firstname" value="firstname">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>middle name</mat-label>
+                            <input matInput formControlName="middleName" placeholder="middlename" value="middlename">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>last name</mat-label>
+                            <input matInput formControlName="lastName" placeholder="lastname" value="lastname">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>reg no</mat-label>
+                            <input matInput formControlName="regNo" placeholder="registrationno " value="registrationno">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>place</mat-label>
+                            <input matInput formControlName="placeOfBirth" placeholder="placeOfBirth " value="placeOfBirth">
+                        </mat-form-field>
+                    </div>
+       
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>DOB</mat-label>
+                            <input type="date" matInput formControlName="dob" placeholder="dob " value="dob">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>gender</mat-label>
+                            <select matNativeControl formControlName="gender">
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                            </select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>phone number</mat-label>
+                            <input matInput formControlName="phoneNumber" placeholder="phonenumber " value="phonenumber">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>email</mat-label>
+                            <input matInput formControlName="email" placeholder="email " value="email">
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>course</mat-label>
+                            <mat-select formControlName="course_id">
+                                <mat-option *ngFor="let course of viewCourse"[value]="course.course_id">
+                                    {{course.course_name}}-{{course.faculty_name}}-{{course.campus_name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                       </div>
+                       <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Username</mat-label>
+                            <input matInput formControlName="username" placeholder="Adhra@gmail.com">
+                        </mat-form-field>
+                    </div>
+    
+                    <div class="col-md-6">
+                        <mat-form-field class="w-100" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput formControlName="password" placeholder="password ">
+                        </mat-form-field>
+                    </div>
+                </div>
+               
+            </form>
+            <div> <button mat-raised-button color="primary" (click)="Onadd()">add</button></div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+

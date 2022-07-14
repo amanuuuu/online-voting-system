@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="tool">Menu</mat-toolbar>
+    <mat-nav-list class="links">
+      <a mat-list-item routerLink="home">home</a>
+      <button mat-list-item class="button button1 text-white" (click)=" open()" >voting</button>
+      <a mat-list-item routerLink="voting">result</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <mat-toolbar  class='mx-lt-5 bg-dark d-flex'>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+     <div class="d-flex  justify-content-between">
+      <div>
+        <span class="text-white">suzaonline voting</span>
+      </div>
+     <div style="margin-left: 80%;">
+      <button class="btn btn-info" (click)="logout()"><i class="fa fa-user"></i></button>
+     </div>
+     </div>
+    </mat-toolbar>
+    <div  class="router-outlet">
+      <div class="in">
+        <div class="inner">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+     
+    </div>
+    
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<ng-template #voterVerification>
+  <h1>Enter Registration to verify</h1>
+  <form [formGroup]="verifyForm">
+    <div class="col-md-6">
+        <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Registration number</mat-label>
+            <input matInput formControlName="reg_no" placeholder="BITA-3-19-56-TZ">
+        </mat-form-field>
+    </div>
+  </form>
+  <button type="button" class="btn btn-primary" (click)="verify()">verify</button>
+</ng-template>

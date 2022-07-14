@@ -1,0 +1,64 @@
+<h1 style="font-weight: 50px;">Result of 2021/2022 election </h1>
+<div class="col-md-6 addbutto">
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Election Date</mat-label>
+        <select matNativeControl [(ngModel)]="date" (change)="change(date)">
+            <option *ngFor="let elec of election" [value]="elec.election_date">{{elec.election_type}}</option>
+        </select>
+    </mat-form-field>
+</div>
+<hr>
+<div class="head">
+    <div style=" color: white;"  class="d-flex p-2 justify-content-between">
+        <h2 >Election Data Center</h2>
+        <button type="button" class="btn btn-info" (click)="navigate()"><i class="fa fa-print"></i></button>
+    </div>
+</div>
+<div class="d-flex p-4 conten">
+    <mat-tab-group class="w-100">
+        <mat-tab label="PRESIDENT RESULTS"> 
+            <div class="table-responsive text-nowrap">
+            <table class="table table-striped  w-100">
+                <thead>
+                  <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">campus Name</th>
+                    <th scope="col">Votes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let pres of presidentResult">
+                    <th scope="row">1</th>
+                    <td>{{pres.first_name}}  {{pres.last_name}} {{pres.middle_name}}</td>
+                    <td>{{pres.campus_name}}</td>
+                    <td>{{pres.votes}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+        </mat-tab>
+        <mat-tab label="REPRESENTATIVES RESULTS"> <div class="table-responsive text-nowrap">
+            <table class="table table-striped  w-100">
+                <thead>
+                  <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">Candidate Name</th>
+                    <th scope="col">campus Name</th>
+                    <th scope="col">Votes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p of primeResultes">
+                    <th scope="row">1</th>
+                    <td>{{p.first_name}}  {{p.last_name}} {{p.middle_name}}</td>
+                    <td>{{p.campus_name}}</td>
+                    <td>{{p.votes}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+         </mat-tab>
+    </mat-tab-group>
+</div>

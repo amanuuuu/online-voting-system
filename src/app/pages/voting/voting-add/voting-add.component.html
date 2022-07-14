@@ -1,0 +1,80 @@
+<div class="cont">
+    <div class="row mt-3 ml-3 mr-3">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h3><b>Student election</b></h3>
+                        <small><b></b>SUZA</small>
+                    </div>
+                    <hr>
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <h3><b>Presidant</b></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+
+                        <div class="candidate" style="position: relative;" *ngFor="let pres of presidents">
+                            <div class="img-field">
+                                <img [src]="'data:image/jpeg;base64,'+pres.image" alt="">
+                            </div>
+                            <div class="candidate_name">{{pres.first_name}}</div>
+                            <div class="vote-field">
+                                <span class="badge badge-success">
+                                    <mat-radio-group aria-labelledby="example-radio-group-label"
+                                        class="example-radio-group" [(ngModel)]="presidentvote">
+                                        <mat-radio-button class="example-radio-button" 
+                                            [value]="pres.candidate_id" [disabled]="presidentVoted">
+                                        
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="row-md-12 justify-content-center">
+                            <button type="button" class="btn btn-success btn-rounded" (click)="presidentVote()">vote</button>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <div class="text-center">
+                                <h3><b>Prime Ministers</b></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+
+                        <div class="candidate" style="position: relative;" *ngFor="let prime of primeMinisters">
+                            <div class="img-field">
+                                <img [src]="'data:image/jpeg;base64,'+prime.image" alt="">
+                            </div>
+                            <div class="candidate_name">{{prime.first_name}}</div>
+                            <div class="vote-field">
+                                <span class="badge badge-success">
+                                    <mat-radio-group aria-labelledby="example-radio-group-label"
+                                        class="example-radio-group" [(ngModel)]="primeminvote">
+                                        <mat-radio-button class="example-radio-button" 
+                                            [value]="prime.candidate_id" [disabled]="primeVoted">
+                                        
+                                        </mat-radio-button>
+                                    </mat-radio-group>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row-md-12 justify-content-center">
+                            <button type="button" class="btn btn-info btn-rounded" (click)="primeVote()">vote</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

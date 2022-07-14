@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.cont {
+    padding: 30px;
+}
+
+.router-outlet {
+    padding: 10px;
+    background-color: rgb(141, 140, 140);
+}
+
+.in {
+    padding: 12px;
+    background-color: rgb(255, 253, 253);
+}
+
+.inner {
+    padding: 21px;
+    background-color: white;
+    box-shadow: 3px 5px 5px 5px rgb(221, 220, 220);
+}
+.addbutton{
+    display: flex;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.head{
+    
+    height: 50px;
+    background-color: rgb(41, 115, 184);
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+   
+}
+.conten{
+    
+    border: 2px solid rgb(71, 71, 243);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  
+}

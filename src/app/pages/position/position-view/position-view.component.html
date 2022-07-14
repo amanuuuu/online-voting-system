@@ -1,0 +1,97 @@
+<div class="cont">
+    
+        <mat-card>
+            <mat-card-title>list of position</mat-card-title>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="right">
+                            <div class="addbutton">
+                                <button mat-raised-button color="primary"(click)="Onadd()">add position</button>
+                                &nbsp;&nbsp;
+                                <button mat-raised-button color="primary"(click)="addElect()">add election</button>
+                            </div>
+                            <div class="addbutton">
+                               
+                            </div>
+                            <div class="table">
+                                <table class=" table table-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>position Name</th>
+                                            <th>delete</th>
+                                            <td>update</td>
+                                        </tr >
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let pos of viewposition,let x=index">
+                                            <td>{{pos.positionId}}</td>
+                                            <td>{{pos.positionName}}</td> 
+                                            <td><button mat-raised-button color="primary"(click)="Ondelete(pos.positionId)" >delete</button></td>
+                                            <td><button mat-raised-button color="primary"(click)=Edit() >update</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="left">
+                           
+                            <div class="table">
+                                <table class=" table table-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Election Type</th>
+                                            <th>Election Date</th>
+                                            <th>Action</th>
+                                            
+                                        </tr >
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let elect of elections,let x=index">
+                                            <td>{{elect.election_id}}</td>
+                                            <td>{{elect.election_type}}</td> 
+                                            <td>{{elect.election_date}}</td>
+                                            <td>
+                                                <button mat-raised-button color="primary"(click)="Ondelete(elect.election_id)" >delete</button>
+                                                &nbsp;&nbsp;
+                                                <button mat-raised-button color="primary"(click)=Edit() >update</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                           </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+</div>
+
+<ng-template #addElection>
+    <form [formGroup]="AddFormElection" autocomplete="off">
+        <div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <mat-label>election type</mat-label>
+                    <input matInput formControlName="election_type" placeholder="election type">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <mat-label>election date</mat-label>
+                    <input matInput type="date" formControlName="election_date" placeholder="election date">
+                </mat-form-field>
+            </div>
+        </div>
+    
+    </form>
+    <div> <button mat-raised-button color="primary" (click)="Electadd()">add</button></div>
+</ng-template>
+

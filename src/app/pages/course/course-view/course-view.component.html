@@ -1,0 +1,35 @@
+<div class="cont">
+    <mat-card>
+        <mat-card-title>List of Courses</mat-card-title>
+        <mat-card-content>
+            <div class="addbutton">
+                <button mat-raised-button color="primary"(click)="Onadd()">add course</button>
+            </div>
+            <div class="table">
+                <table class=" table table-border">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>course Name </th>
+                            <th>faculty</th>
+                            <th>campus</th>
+                            <th>delete</th>
+                            <td>update</td>
+                        </tr >
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cous of viewcourse,let x=index">
+                            <td>{{cous.course_id}}</td>
+                            <td>{{cous.course_name}}</td> 
+                            <td>{{cous.faculty_name}}</td>
+                            <td>{{cous.campus_name}}</td>
+                            <td><button mat-raised-button color="primary" (click)="Ondelete(cous.course_id)">delete</button></td>
+                            <td><button mat-raised-button color="primary"(click)=Edit() >update</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    
+</div>
